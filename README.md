@@ -70,6 +70,15 @@ after_success:
   - npm run lh -- https://staging.example.com
 ```
 
+**Note:** If your project doesn't have an existing test script defined in package.json you may need to add a dummy test.
+
+```js
+"scripts": {
+  "lh": "lighthouse-ci",
+  "test": "echo 'Travis dummy test'"
+},
+```
+
 When Lighthouse is done auditing the URL, the CI will post a comment to the pull
 request containing the updated scores:
 
